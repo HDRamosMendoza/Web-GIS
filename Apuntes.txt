@@ -1,0 +1,13 @@
+DOJO TOOLKIT
+
+Dojo es un toolkit que facilita el desarrollo de aplicaciones Web. Contiene API's, componentes de interfaz de usuario (widgets), etc.
+
+Dojo pretende abstraer al desarrollador de las comlejidades que implica DHTML (Dynamic HTML). Evita las discrepancias
+existentes entre navegadores que hacen que el código JavaScript a utilizar sea distinto para cada uno de ellos.
+
+Esta dividido en varios paquetes:
+
+• Dojo - Es el núcleo, la parte principal de Dojo y consta de los paquetes y módulos que se utilizan más habitualmente. Este núcleo tiene distintas funcionalidades como la manipulación del DOM, manejar llamadas AJAX, eventos, promesas, etc.
+• Dijit - Es un amplio conjunto de widgets (componentes de la interfaz de usuario y la funcionalidad para apoyarlos).
+• Dojox - Es una colección de paquetes y módulos que proporcionan una amplia gama de funcionalidades que están basadas en los dos paquetes anteriores (dojo y dijit). Estos paquetes y módulos tienen diferentes grados de madurez.
+• Util - Herramientas de apoyo para el resto de los paquetes.
