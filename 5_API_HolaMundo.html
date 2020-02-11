@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejercicio 1.1</title>
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://js.arcgis.com/3.31/esri/css/esri.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- JS -->
+		<script src="https://js.arcgis.com/3.31/"></script>
+
+		<script>
+			var dojoConfig = {
+				async: true
+			}
+		</script>>
+		<script>
+			require(["esri/map"],function(Map){
+				let map = new Map("divMap", {basemap: "topo", center: [-122.45, 37.75],
+					zoom: 12
+
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="divMap"></div>	
+	</body>
+</html>
