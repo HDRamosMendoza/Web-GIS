@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Cargar DOJO</title>
+
+		<!-- JS -->
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: true"></script>
+
+		<script>
+			require([
+				"dojo/dom",
+				"dojo/domReady!"
+			],
+			function(dom){
+				let el = dom.byId("contenedor");
+				el.innerHTML = "Hola Mundo!";
+			});
+		</script>
+	</head>
+	<body>
+		<div id="contenedor"></div>
+	</body>
+</html>
