@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>DOJO Efecto</title>
+
+		<!-- JS -->
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: true"></script>
+
+		<script>
+			require([
+				"dojo/dom",
+				"dojo/fx",
+				"dojo/domReady!"
+			],
+			function(dom,fx){
+				let el = dom.byId("contenedor");
+				el.innerHTML = "Hola Mundo!";
+				// Animación
+				fx.slideTo({
+					node: el,
+					top: 100,
+					left: 200
+				}).play();
+
+			});
+		</script>
+	</head>
+	<body>
+		<div id="contenedor"></div>
+	</body>
+</html>
