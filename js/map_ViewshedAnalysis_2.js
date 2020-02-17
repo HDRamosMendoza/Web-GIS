@@ -134,26 +134,26 @@ require([
                  var fsInputPoint = new FeatureSet();
                  fsInputPoint.features.push(graphicViewpoint);
                 /*
-       * Step: Prepare the second input parameter
-       */      
-      var luDistance = new LinearUnit();
-      luDistance.distance = 5;
-      luDistance.units = "esriMiles";
+                 * Step: Prepare the second input parameter
+                 */      
+                var luDistance = new LinearUnit();
+                luDistance.distance = 5;
+                luDistance.units = "esriMiles";
 
-                /*
-       * Step: Build the input parameters into a JSON-formatted object
-       */
-      var gpParams = {
-        "Input_Observation_Point" : fsInputPoint,
-        "Viewshed_Distance" : luDistance
-      };
+                          /*
+                 * Step: Build the input parameters into a JSON-formatted object
+                 */
+                var gpParams = {
+                  "Input_Observation_Point" : fsInputPoint,
+                  "Viewshed_Distance" : luDistance
+                };
 
 
-                /*
-       * Step: Wire and execute the Geoprocessor
-       */
-      gpViewshed.on("execute-complete", displayViewshed);
-      gpViewshed.execute(gpParams);
+                          /*
+                 * Step: Wire and execute the Geoprocessor
+                 */
+                gpViewshed.on("execute-complete", displayViewshed);
+                gpViewshed.execute(gpParams);
 
 
 
