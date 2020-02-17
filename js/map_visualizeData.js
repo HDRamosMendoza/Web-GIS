@@ -75,7 +75,7 @@ require([
 
 
             });
-            lyrQuakes.setDefinitionExpression("MAGNITUDE >= 2.0");
+            //lyrQuakes.setDefinitionExpression("MAGNITUDE >= 2.0");
             mapMain.addLayers([lyrUSA, lyrQuakes]);
 
 
