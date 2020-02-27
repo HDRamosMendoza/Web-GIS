@@ -27,15 +27,21 @@
 
     var map;
     var tb;
-    require(["esri/map",
-        "dojo/on",
+    require([
+      "esri/map",
+      "esri/dijit/BasemapGallery",
+      "esri/arcgis/utils",
+      "dojo/on",
 
-        "dijit/layout/TabContainer",
-        "dijit/layout/ContentPane",
-        "dijit/layout/BorderContainer",
-        "dojo/domReady!"],
-        function(
+      "dijit/layout/TabContainer",
+      "dijit/layout/ContentPane",
+      "dijit/layout/BorderContainer",
+      "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/TitlePane",
+      "dojo/domReady!"
+      ],function(
           Map,
+          BasemapGallery,
+          arcgisUtils,
           on
 
         ) {
@@ -62,6 +68,16 @@
           map.resize();
           map.reposition();
 
+        });
+
+        var basemapGallery = new BasemapGallery({
+          showArcGISBasemaps: true,
+          map: map
+        }, "basemapGallery");
+        basemapGallery.startup();
+        
+        basemapGallery.on("error", function(msg) {
+          console.log("basemap gallery error:  ", msg);
         });
 
       });
@@ -101,11 +117,19 @@
       </div>
 
       <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+        <!-- BaseMap -->
+        <div style="position:absolute; right:20px; top:10px; z-Index:999;">
+          <div data-dojo-type="dijit/TitlePane" 
+               data-dojo-props="title:'Switch Basemap', open:false">
+            <div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
+              <div id="basemapGallery"></div>
+            </div>
+          </div>
+        </div>
 
       </div>
 
       <div id="footer" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'">
-
         <label for="dtb">Introduzca el nombre de un estado:</label> <input id="dtb" data-dojo-type="dijit/form/TextBox" value="Washington" />
         <button id="progButtonNode" type="button">Ir al estado</button>
       </div>
