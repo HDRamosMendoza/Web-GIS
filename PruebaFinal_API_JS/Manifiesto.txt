@@ -1,0 +1,17 @@
+La memoria explicativa esta en los comentarios del examen que se desarrollo.
+
+Se siguio los paso del examen en orden correlativo para la funcionalidad.
+
+ 1. Se agrego en el siguiente orden.
+	- Legenda.
+	- Search
+	- Basemap
+	- Overview
+	- ScaleBar
+
+2. Se agrego en el siguiente orden
+	- Se agrego el DRAW. Se debe de dibujar un poligono. Por falta de tiempo no pude sacar el rectangulo el
+	poligono lo vi mucho mas fácil para implementar en dos horas.
+	- Se agrego un popup personalizado. Dar un toque de diferencia.
+
+	

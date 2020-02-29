@@ -19,73 +19,11 @@
             display: block;
             position: absolute;
             z-index: 2;
-            top: 10px;
-            right: 10px;
+            top: 28px;
+            left: 80px;
           }
     </style>
-    <script>
-
-    var map;
-    var tb;
-    require([
-      "esri/map",
-      "esri/dijit/BasemapGallery",
-      "esri/arcgis/utils",
-      "dojo/on",
-
-      "dijit/layout/TabContainer",
-      "dijit/layout/ContentPane",
-      "dijit/layout/BorderContainer",
-      "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/TitlePane",
-      "dojo/domReady!"
-      ],function(
-          Map,
-          BasemapGallery,
-          arcgisUtils,
-          on
-
-        ) {
-
-
-        on(dojo.byId("pintaYQuery"),"click",fPintaYQuery);
-        on(dojo.byId("progButtonNode"),"click",fQueryEstados);
-
-        function fPintaYQuery(){
-          alert("Evento del botón Ir a estado");
-        }
-        function fQueryEstados(){
-         alert("Evento del botón Seleccionar ciudades");
-        }
-
-        map = new Map("map", {
-          basemap: "topo",
-          center: [-122.45,37.75], // long, lat
-          zoom: 13,
-          sliderStyle: "small"
-        });
-
-        map.on("load",function(evt){
-          map.resize();
-          map.reposition();
-
-        });
-
-        var basemapGallery = new BasemapGallery({
-          showArcGISBasemaps: true,
-          map: map
-        }, "basemapGallery");
-        basemapGallery.startup();
-        
-        basemapGallery.on("error", function(msg) {
-          console.log("basemap gallery error:  ", msg);
-        });
-
-      });
-
-
-
-    </script>
-
+    <script src="js/main.js"></script>
   </head>
 
   <body class="claro">
@@ -98,13 +36,14 @@
            data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
 
         Master GIS ESRI España
-       <div id="subheader">Nombre Apellidos</div>
+       <div id="subheader">Heber Daniel Ramos Mendoza</div>
 
       </div>
       <div data-dojo-type="dijit.layout.ContentPane" id="leftPane" data-dojo-props="region:'left'">
         <div data-dojo-type="dijit.layout.TabContainer">
 
           <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="title:'Leyenda', selected:true">
+            <!-- LEGEND -->
             <div id="legendDiv"></div>
           </div>
 
@@ -117,7 +56,9 @@
       </div>
 
       <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
-        <!-- BaseMap -->
+        <!-- SEARCH -->
+        <div id="search"></div>
+        <!-- BASEMAP GALLERY -->
         <div style="position:absolute; right:20px; top:10px; z-Index:999;">
           <div data-dojo-type="dijit/TitlePane" 
                data-dojo-props="title:'Switch Basemap', open:false">
@@ -132,6 +73,9 @@
       <div id="footer" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'">
         <label for="dtb">Introduzca el nombre de un estado:</label> <input id="dtb" data-dojo-type="dijit/form/TextBox" value="Washington" />
         <button id="progButtonNode" type="button">Ir al estado</button>
+        <!--
+        <button id="delButtonNode" type="button">Limpiar</button>
+        -->
       </div>
 
     </div>
